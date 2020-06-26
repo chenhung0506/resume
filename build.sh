@@ -1,12 +1,12 @@
 #!/bin/bash
 build() {
   REPO=chenhung0506
-  CONTAINER=customized
+  CONTAINER=resume
   TAG=$(git rev-parse --short HEAD)
   DOCKER_IMAGE=$REPO/$CONTAINER:$TAG
 
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  BUILDROOT=$DIR/..
+  BUILDROOT=$DIR/.
 
 
   # Build docker
@@ -33,7 +33,7 @@ imagePull() {
 }
 
 dockerComposeUp() {
-  cmd="docker-compose up"
+  cmd="docker-compose up -d"
   echo $cmd
   eval $cmd
 }
