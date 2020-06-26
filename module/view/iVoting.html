@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Avalon</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/black.css" id="theme">
+		<link rel="stylesheet" href="css/zenburn.css">
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>登錄頁</h1>
+					<img class="img-h" src="images/5-0.png" height="550px">
+					<p>帳號: 10</p>
+					<p>密碼: 10</p>
+				</section>
+				<section>
+					<h1>人員管理頁</h1>
+					<img class="img-h" src="images/5-1.png" height="550px">
+					<p>登錄後預設轉跳至人員管理頁</p>
+				</section>
+				<section>
+					<h1>人員管理頁</h1>
+					<img class="img-h" src="images/5-2.png" height="550px">
+					<p>圖示為新增、刪除、修改功能位置</p>
+				</section>
+				<section>
+					<h1>按下 [Add] 按鈕後</h1>
+					<img class="img-h" src="images/5-3.png" height="550px">
+					<p>填妥資料後再次按下 [SAVE] 即可新增人員</p>
+				</section>
+				<section>
+					<h1>按下 [Update] 按鈕後</h1>
+					<img class="img-h" src="images/5-4.png" height="550px">
+					<p>填妥資料後再次按下 [Edit] 即可異動人員資料</p>
+				</section>
+				<section>
+					<h1><a href="http://ivoting.ga/adminGo">按此前往台北市政府抽獎頁面</a></h1>
+					<img class="img-h" src="images/5-5.png" height="550px">
+					<p>此功能為協助北市政府對於有參予iVoting網站投票的人<p>
+					<p>一年一次抽獎選出幸運兒贈予獎品<p>
+				</section>
+				<section>
+					<h1>[三獎]</h1>
+					<img class="img-h" src="images/5-6.png" height="550px">
+					<p>不分行政區一次抽出20位幸運兒</p>
+				</section>
+				<section>
+					<h1>[二獎]</h1>
+					<img class="img-h" src="images/5-7.png" height="550px">
+					<p>分行政區逐次選出1位幸運兒</p>
+				</section>
+				<section>
+					<h1>[頭獎]</h1>
+					<img class="img-h" src="images/5-8.png" height="550px">
+					<p>不分行政區逐次選出1位幸運兒</p>
+				</section>
+				<section>
+					<img class="img-h" src="images/5-9.jpg" height="700px">
+				</section>
+			</div>
+
+		</div>
+
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
