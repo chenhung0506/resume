@@ -10,6 +10,7 @@ set -o allexport
 source dev.env
 set +o allexport
 
+echo "[ -------- 0.   push image           -------- ]"
 echo "[ -------- 1.   build and run        -------- ]"
 echo "[ -------- 2.   pull image and run   -------- ]"
 echo "[ -------- 3.   run module           -------- ]"
@@ -25,8 +26,10 @@ fi
 echo "mode:"$mode
 CMD=""
 
-
-if [ $mode == "1" ]; then
+if [ $mode == "0" ]; then
+    echo "[ -------- 0.   push image           -------- ]"
+    CMD=("imagePush")
+elif [ $mode == "1" ]; then
     echo "[ -------- 1.   build and run        -------- ]"
     build
     imagePull

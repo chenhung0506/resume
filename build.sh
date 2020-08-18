@@ -15,6 +15,16 @@ build() {
   eval $cmd
 }
 
+imagePush() {
+  REPO=chenhung0506
+  CONTAINER=resume
+  TAG=$(git rev-parse --short HEAD)
+  DOCKER_IMAGE=$REPO/$CONTAINER:$TAG
+  cmd="docker push $DOCKER_IMAGE"
+  echo $cmd
+  eval $cmd
+}
+
 imagePull() {
     TAG=$(git rev-parse --short HEAD)
     DOCKER_IMAGE=$REPO/$CONTAINER:$TAG
