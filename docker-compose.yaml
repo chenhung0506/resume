@@ -23,10 +23,10 @@ services:
     env_file:
       - dev.env
     healthcheck:
-      test: ["CMD", "curl", "-f", "127.0.0.1:${PORT}/healthCheck"]
-      interval: 1m30s
+      test: ["CMD-SHELL", "curl -f http://localhost:${PORT}/healthCheck || exit 1"]
+      interval: 600s
       timeout: 10s
+      start_period: 10s
       retries: 3
-      start_period: 40s
     # networks:
     #   - docker-compose-base_default
