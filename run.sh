@@ -2,8 +2,8 @@
 # REPO=docker-reg.emotibot.com.cn:55688
 WORK_PATH=$(dirname "$0")
 source ${WORK_PATH}/build.sh 
-REPO=hub.docker.com
-CONTAINER=transmit-tags
+REPO=chenhung0506
+CONTAINER=resume
 
 export TAG=$(git rev-parse --short HEAD)
 set -o allexport
