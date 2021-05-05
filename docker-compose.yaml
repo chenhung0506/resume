@@ -1,32 +1,24 @@
 version: "3.7"
 services:
   web:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
-    #   args:
-    #     argTest: success
-    image: chenhung0506/resume:${TAG}
+    image: harbor.chlin.tk/vue/resume:${TAG}
     container_name: resume
-    # environment:
-    #   - PORT=22222
     volumes:
       - ~/volumes/resume:/usr/src/app/logs
-    restart: always
-    # deploy:
-    #   resources:
-    #     mem_limit: 5125m
-    # depends_on: 
-    #   - nlu-tde
     ports: 
       - "${PORT}:${PORT}"
     env_file:
       - dev.env
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:${PORT}/healthCheck || exit 1"]
-      interval: 600s
-      timeout: 10s
-      start_period: 10s
-      retries: 3
-    # networks:
-    #   - docker-compose-base_default
+    # healthcheck:
+      # test: ["CMD-SHELL", "curl -f http://localhost:${PORT}/healthCheck || exit 1"]
+      # interval: 600s
+      # timeout: 10s
+      # start_period: 10s
+      # retries: 3
+    restart: always
+    networks: 
+      - nginx
+networks:
+  nginx:
+    external: true
+    name: nginx

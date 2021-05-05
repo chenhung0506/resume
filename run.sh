@@ -1,14 +1,17 @@
 #!/bin/bash
-# REPO=docker-reg.emotibot.com.cn:55688
 WORK_PATH=$(dirname "$0")
 source ${WORK_PATH}/build.sh 
-REPO=chenhung0506
+REPO=harbor.chlin.tk
 CONTAINER=resume
+GIT_HEAD="$(git rev-parse --short=7 HEAD)"
+GIT_DATE=$(git log HEAD -n1 --pretty='format:%cd' --date=format:'%Y%m%d-%H%M')
 
-export TAG=$(git rev-parse --short HEAD)
+export TAG=${GIT_DATE}
 set -o allexport
 source dev.env
 set +o allexport
+
+
 
 echo "[ -------- 0.   push image           -------- ]"
 echo "[ -------- 1.   build and run        -------- ]"

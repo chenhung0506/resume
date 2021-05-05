@@ -1,6 +1,6 @@
 #!/bin/bash
 build() {
-  REPO=chenhung0506
+  REPO=harbor.chlin.tk/vue
   CONTAINER=resume
   TAG=$(git rev-parse --short HEAD)
   DOCKER_IMAGE=$REPO/$CONTAINER:$TAG
@@ -10,13 +10,13 @@ build() {
 
 
   # Build docker
-  cmd="DOCKER_BUILDKIT=1 docker build -t $DOCKER_IMAGE -f $DIR/Dockerfile $BUILDROOT --no-cache=true"
+  cmd="DOCKER_BUILDKIT=1 docker build -t $DOCKER_IMAGE -f $DIR/Dockerfile $BUILDROOT"
   echo $cmd
   eval $cmd
 }
 
 imagePush() {
-  REPO=chenhung0506
+  REPO=harbor.chlin.tk/vue
   CONTAINER=resume
   TAG=$(git rev-parse --short HEAD)
   DOCKER_IMAGE=$REPO/$CONTAINER:$TAG
