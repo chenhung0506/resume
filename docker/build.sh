@@ -33,7 +33,7 @@ dockerRun() {
   # - max memory = 5G \
   # "
   globalConf="
-    -v ~/volumes/university:/usr/src/app/logs \
+    -v ~/volumes/resume:/usr/src/app/logs \
     -v ~/.ssh/known_hosts:/root/.ssh/known_hosts \
     -v ~/etc/timezone:/etc/localtime:ro \
     -m 5125m \
