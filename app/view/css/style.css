@@ -29,6 +29,15 @@ h1{
     text-shadow: 2px 4px 5px #000;
 }
 
+h2{
+	margin:0 auto;
+	font-size:3.5em;
+	color:#fff;
+	font-weight:bold;
+    text-align:left;
+    text-shadow: 2px 4px 5px #000;
+}
+
 .contact-info h2{
 	font-size: 2em;
     display: block;
