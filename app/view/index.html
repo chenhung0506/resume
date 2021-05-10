@@ -13,7 +13,7 @@
 			<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
 		<![endif]-->
     </head>
-    <body id="app" style="background-image: url(https://lh3.google.com/u/0/d/1mR0Ozf0SjUitLJdZx62z4nx98R_R7bki=w3280-h1066-iv1), url(https://lh3.googleusercontent.com/h7oWUHdpHoPCDiA0M9pp5GbrpA5u9v3aKX0xUYI9j4LPAWZ0FAM43mrJXxm0C24NDbHucU_Iu0-Msqep3CG_joLCz0WJW0PIbLYuOIonHKr_ZwPk0KWaBAD7IMHMGGlESAZT4QVCBg=w1920-h1080);">
+    <body id="app" style="background-image: url(img/pattern.png), url(img/bg-horizontal.jpg);">
         <div class="container">
             <!--about-->
             <div class="row justify-content-center mt-5">
@@ -34,8 +34,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="bmenu">
-                        <li><a href="#" onclick="openNav(3)">spring3 project</a></li>
-                        <li><a href="#" onclick="openNav(4)">Firebase project</a></li>
+                        <li><a href="#" onclick="openNav(3)">iVoting (spring3)</a></li>
+                        <li><a href="#" onclick="openNav(3)">websocket (spring-boot)</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="bmenu">
-                        <li><a href="#" onclick="openNav(5)">Android project</a></li>
+                        <li><a href="#" onclick="openNav(5)">GreedSnake</a></li>
                     </ul>
                 </div>
             </div>
@@ -55,7 +55,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="bmenu">
-                        <li><a href="#" onclick="openNav(5)">Android project</a></li>
+                        <li><a href="#" onclick="openNav(5)">LineBot</a></li>
+                        <li><a href="#" onclick="openNav(5)">University</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +66,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="bmenu">
-                        <li><a href="#" onclick="openNav(5)">Android project</a></li>
+                        <li><a href="#" onclick="openNav(5)">Chat-ui (websocket)</a></li>
+                        <li><a href="#" onclick="openNav(4)">Avalon (FireBase)</a></li>
                     </ul>
                 </div>
             </div>
@@ -76,6 +78,8 @@
                 <div class="col-md-4">
                     <ul class="bmenu">
                         <li><a href="https://harbor.chlin.tk" target="_blank">Harbor</a></li>
+                        <li><a href="https://blog.chlin.tk" target="_blank">WordPress</a></li>
+                        <li><a href="https://jenkins.chlin.tk" target="_blank">Jenkins</a></li>
                     </ul>
                 </div>
             </div>
@@ -88,29 +92,26 @@
    <h2>Email:  <a href="chenhung0506@gmail.com" title="chenhung0506@gmail.com" target="_blank" class="">chenhung0506@gmail.com</a></h2>
   </div>
 </div>
-		
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
         <script>
+        function openNav(num) {
+            document.getElementById("mySidenav"+num).style.width = "100%";
+        }
+        function closeNav(num) {
+            document.getElementById("mySidenav"+num).style.width = "0";
+        }
         $(function () {
             reloadBackGroundImage()
             function reloadBackGroundImage() {
                 if( $( window ).width() < 601 ) {
-                    $('#app').css('background-image', 'url(https://lh3.google.com/u/0/d/1mR0Ozf0SjUitLJdZx62z4nx98R_R7bki=w3280-h1066-iv1), url(https://lh3.googleusercontent.com/88JAjNQVJrw8_aQRxP7dtfhsNrqnRB1aOdRLQU2IJSqkUWSFbD18xYqYI5lQ84LMAZRvNpS0h1_P3Em-WZbtYDpJV_kjXvHh2BGyRy7VJePl4xtwH8eGcZ8vNcnMY5hJSRsIOzUM5w=w1920-h1080)');
+                    $('#app').css('background-image', 'url(img/pattern.png), url(img/bg-vertical.jpg)');
                 } else {
-                    $('#app').css('background-image', 'url(https://lh3.google.com/u/0/d/1mR0Ozf0SjUitLJdZx62z4nx98R_R7bki=w3280-h1066-iv1), url(https://lh3.googleusercontent.com/h7oWUHdpHoPCDiA0M9pp5GbrpA5u9v3aKX0xUYI9j4LPAWZ0FAM43mrJXxm0C24NDbHucU_Iu0-Msqep3CG_joLCz0WJW0PIbLYuOIonHKr_ZwPk0KWaBAD7IMHMGGlESAZT4QVCBg=w1920-h1080)');
+                    $('#app').css('background-image', 'url(img/pattern.png), url(img/bg-horizontal.jpg)');
                 }
             }
             $( window ).resize(function() {
                 reloadBackGroundImage()
             });
-
-            function openNav(num) {
-                document.getElementById("mySidenav"+num).style.width = "100%";
-            }
-
-            function closeNav(num) {
-              document.getElementById("mySidenav"+num).style.width = "0";
-            }
         })
         </script>
 
@@ -149,7 +150,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
 						<h2>Certificate</h2>
-						<iframe src="/certificate" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+						<iframe src="certificate.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
                     </div>
                 </div>
             </div>
@@ -164,7 +165,7 @@
                     <div class="col-md-8">
 						<h4><a href="https://ivoting.ga/adminGo" target="_blank" class="">點此造訪網站</a></h4>
 						<h5>操作說明:</h5>
-						<iframe src="/iVoting" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+						<iframe src="iVoting.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
                     </div>
                 </div>
             </div>
@@ -179,7 +180,7 @@
                     <div class="col-md-8">
 						<h4><a href="https://avalon-chlin.herokuapp.com" target="_blank" class="">點此進入遊戲</a></h4>
 						<h5>遊戲解說:</h5>
-						<iframe src="/avalon" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+						<iframe src="avalon.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
                     </div>
                 </div>
             </div>
@@ -194,7 +195,7 @@
                     <div class="col-md-8">
 						<h4><a href="https://www.chlin.tk/Android/app-release.apk" target="_blank" class="">點此下載遊戲</a></h4>
 						<h5>遊戲解說:</h5>
-						<iframe src="gridSnake" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+						<iframe src="greedSnake.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
                     </div>
                 </div>
             </div>
