@@ -14,75 +14,66 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="boostrap/css/bootstrap.min.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="boostrap/js/bootstrap.min.js"></script>
+
+		<!-- <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/black.css" id="theme">
-		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="css/zenburn.css"> -->
 
 	</head>
 
 	<body>
-
-		<div class="reveal">
-
-			<div class="slides">
-				<section>
-					<img class="img-h" src="img/4-1.png" height="650px">
-					<p>長按螢幕兩秒即可開始遊戲;再長按兩秒即可暫停遊戲</p>
-				</section>
-				<section>
-					<img class="img-h" src="img/4-2.png" height="650px">
-					<p>為加快遊戲節奏吃一顆食物長3個尾巴</p>					
-				</section>
-				<section>
-					<img class="img-h" src="img/4-3.png" height="650px">
-					<p>下方Scroe為您的遊戲得分，吃一顆食物加10分</p>
-					<p>撞到身體不會死亡(一次扣5分)</p>
-				</section>
-				<section>
-					<img class="img-h" src="img/4-4.png" height="650px">
-					<p>為提升遊戲樂趣撞到牆會穿過牆從另一邊的牆重新出來</p>
-				</section>
-				<section>
-					<img class="img-h" src="img/4-5.png" height="650px">
-					<p>遊戲會隨尾巴長度而速度逐漸提升，快來挑戰破關吧</p>
-				</section>
-				<section>
-					<img class="img-h" src="img/4-6.png" height="650px">
-					<p>遊戲會隨尾巴長度而速度逐漸提升，快來挑戰破關吧</p>
-				</section>
-				<section>
-					<h1>The End</h1>
-					<p>希望您會喜歡！若有Bug煩請向我聯絡！chenhung0506@gmail.com</p>
-				</section>	
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner img-center">
+				<div class="carousel-item active">
+					<img class="d-block w-50" src="img/4-1.png" alt="First slide">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>test</h5>
+						<p>test</p>
+					</div>
+				</div>
+				<div class="carousel-item img-center">
+					<img class="d-block w-50" src="img/4-2.png" alt="Second slide">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>test</h5>
+						<p>test</p>
+					</div>
+				</div>
+				<div class="carousel-item img-center">
+					<img class="d-block w-50" src="img/4-3.png" alt="Third slide">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>test</h5>
+						<p>test</p>
+					</div>
+				</div>
 			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
 		</div>
-
-		<script src="js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
+<style>
+	.img-center{
+    max-width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #eb9700;
+	}
+	img {  
+    max-height:100%;
+    width:auto;
+	}
+</style>
 	</body>
 </html>
