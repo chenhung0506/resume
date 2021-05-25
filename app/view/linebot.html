@@ -21,9 +21,9 @@
 	</head>
 
 	<body>
-
+		<button id="left"><img src="img/arrow.png" style="height:50px;"></button>
+		<button id="right"><img src="img/arrow.png" style="height:50px"></button>
 		<div class="reveal">
-
 			<div class="slides">
 				<section>
 					<img class="img-h" src="img/4-1.png" height="650px">
@@ -59,9 +59,7 @@
 
 		<script src="js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
 		<script>
-
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
@@ -83,6 +81,32 @@
 			});
 
 		</script>
+		<style>
+				.arrow {
+					margin: 1em auto;
+					width: 280px;
+					text-align: center;
+					background-color: #eee;
+					padding: 0.5em 0;
+					display: block;
+					color: #333;
+					text-decoration: none;
+					text-transform: uppercase;
+					transition: all 0.2s;
+					box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.6);
+					border-radius: 8px;
+					/* &:hover {
+						color: #eee;
+						background-color: #333;
+					} */
+				}
+
+				.left {
+						content: '\25c4';
+						padding-right: 0.5em;
+
+				}
+		</style>
 
 	</body>
 </html>
