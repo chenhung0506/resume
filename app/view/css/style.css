@@ -186,14 +186,15 @@ h3{
  ------------------------------------------------------------ */
 
 
-.box-1 { background-color: #474141; }
+.box-1 { background-color: #141414; }
 
 .btn {
 	line-height: 50px;
-	height: 50px;
+	height: 58px;
 	text-align: center;
 	width: 250px;
 	cursor: pointer;
+	margin: 1px 0 1.5px 0;
 }
 .btn-one {
 	color: #FFF;
@@ -204,7 +205,6 @@ h3{
 .btn-one span {
 	transition: all 0.3s;
 	top: 0;
-	left: -20px;
 	font-size: 2em;
 	font-weight: bold;
 	margin: 0 0 0 0;
