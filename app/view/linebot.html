@@ -14,11 +14,47 @@
 		<!-- <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/black.css" id="theme">
 		<link rel="stylesheet" href="css/zenburn.css"> -->
+		<style type="text/css">
+			body{
+				padding-bottom: 150px;
+			}
+			.carousel-control-prev-icon {
+				width: 40px;
+				height: 40px;
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e");
+			}
+			.carousel-control-next-icon {
+				width: 40px;
+				height: 40px;
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
+			}
+			.carousel-control-prev {
+				margin-left: -100px;
+			}
+			.carousel-control-next {
+				margin-right: -100px;
+			}
+			.carousel-caption{
+				background: rgba(0, 0, 0,.5);
+				 bottom:-150px; 
+			}
+			.carousel-inner { 
+				padding-bottom:150px; 
+			}
+			.carousel-item img{
+				display: block;
+				margin: auto;
+				max-height: 500px;
+				width: auto;
+				height: auto;
+
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
+			<div class="row justify-content-center">
+				<div class="col-md-10">
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -27,21 +63,21 @@
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img class="d-block w-100" src="https://via.placeholder.com/1920x1080?text=01" alt="01">
+								<img class="d-block" src="img/4-1.png" alt="01">
 								<div class="carousel-caption d-none d-md-block">
 									<h5>標題01</h5>
 									<p>敘述文字02</p>
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="https://via.placeholder.com/1920x1080?text=02" alt="02">
+								<img class="d-block" src="https://via.placeholder.com/728x900" alt="02">
 								<div class="carousel-caption d-none d-md-block">
 									<h5>標題01</h5>
 									<p>敘述文字02</p>
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="https://via.placeholder.com/1920x1080?text=03" alt="03">
+								<img class="d-block" src="https://via.placeholder.com/800x800" alt="03">
 								<div class="carousel-caption d-none d-md-block">
 									<h5>標題01</h5>
 									<p>敘述文字02</p>
@@ -68,25 +104,25 @@
 			</ol>
 			<div class="carousel-inner img-center">
 						<div class="carousel-item active">
-									<img class="d-block w-50" src="img/4-1.png" alt="First slide">
-									<div class="carousel-caption d-none d-md-block">
-												<h5>test</h5>
-												<p>test</p>
-									</div>
+										<img class="d-block w-50" src="img/4-1.png" alt="First slide">
+										<div class="carousel-caption d-none d-md-block">
+														<h5>test</h5>
+														<p>test</p>
+										</div>
 						</div>
 						<div class="carousel-item img-center">
-									<img class="d-block w-50" src="img/4-2.png" alt="Second slide">
-									<div class="carousel-caption d-none d-md-block">
-												<h5>test</h5>
-												<p>test</p>
-									</div>
+										<img class="d-block w-50" src="img/4-2.png" alt="Second slide">
+										<div class="carousel-caption d-none d-md-block">
+														<h5>test</h5>
+														<p>test</p>
+										</div>
 						</div>
 						<div class="carousel-item img-center">
-									<img class="d-block w-50" src="img/4-3.png" alt="Third slide">
-									<div class="carousel-caption d-none d-md-block">
-												<h5>test</h5>
-												<p>test</p>
-									</div>
+										<img class="d-block w-50" src="img/4-3.png" alt="Third slide">
+										<div class="carousel-caption d-none d-md-block">
+														<h5>test</h5>
+														<p>test</p>
+										</div>
 						</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
