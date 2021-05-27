@@ -61,7 +61,7 @@
                 <div class="col-md-4">
                     <ul class="bmenu">
                         <li><h3>Spring3 MVC</h3><a href="#" onclick="openNav(3)">iVoting</a></li>
-                        <li><h3>SpringBoot</h3><a href="#" onclick="openNav(3)">Chat</a></li>
+                        <li><h3>SpringBoot</h3><a href="#" onclick="openNav(8)">Chat</a></li>
                         <li><h3>Android</h3><a href="#" onclick="openNav(5)">GreedSnake</a></li>
                     </ul>
                 </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="bmenu">
-                        <li><h3>Websocket</h3><a href="#" onclick="openNav(5)">Chat-ui</a></li>
+                        <li><h3>Websocket</h3><a href="#" onclick="openNav(8)">Chat-ui</a></li>
                         <li><h3>FireBase</h3><a href="#" onclick="openNav(2)">Avalon</a></li>
                     </ul>
                 </div>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="bmenu">
-                        <li><h3>Proxy</h3><a href="#" onclick="openNav(4)">Chat-ui</a></li>
+                        <li><h3>Proxy</h3><a href="#" onclick="openNav(8)">Chat-ui</a></li>
                         <li><h3>Reverse-Proxy</h3><a href="#" onclick="openNav(5)">reverse-proxy</a></li>
                     </ul>
                 </div>
@@ -191,17 +191,55 @@
             </div>
         </div>
 
+        <!--linebot-->
+        <div id="mySidenav4" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(4)">&times;</a>
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://lin.ee/oJo6HsB')">
+                        <span><a target="_blank">開啟機器人[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/linebot')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
+                    </div>
+                    <div class="col-md-8">
+						<iframe src="linebot.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--university-->
+        <div id="mySidenav7" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(7)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://university.linch.ml')">
+                        <span><a target="_blank">造訪首頁[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://university.linch.ml/admin')">
+                        <span><a target="_blank">造訪後台[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/university-demo')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
+                    </div>
+                    <div class="col-md-12">
+                        <iframe src="university.html" width="100%" frameborder="0" scrolling="no" style="height: 100vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--sidenav-->
         <div id="mySidenav3" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav(3)">&times;</a><!--close btn-->
-            <!--sidenav content-->
             <div class="container">
                 <div class="row justify-content-center box-1">
-                    <div class="col-md-6 col-10">
-                        <a href="https://ivoting.ga/adminGo" target="_blank" class="btn btn-block btn-light my-2">造訪網站[點此]</a>
+                    <div class="col-md-6 btn btn-one">
+                        <span><a target="_blank">服務暫不開放</a></span>
                     </div>
-                    <div class="col-md-6 col-10">
-                        <a href="https://ivoting.ga/adminGo" target="_blank" class="btn btn-block btn-light my-2">Git連結[點此]</a>
+                    <div class="col-md-6 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/iVoting')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
                     </div>
                     <div class="col-md-12">
                         <iframe src="iVoting.html" width="100%" frameborder="0" scrolling="no" style="height: 100vh"></iframe>
@@ -209,18 +247,36 @@
                 </div>
             </div>
         </div>
-        <div id="mySidenav4" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(4)">&times;</a><!--close btn-->
+        <!--sidenav-->
+        <div id="mySidenav8" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(8)">&times;</a><!--close btn-->
             <div class="container">
                 <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one">
-                        <span><a href="https://lin.ee/oJo6HsB" target="_blank" onclick="subgo()">開啟機器人[點此]</a></span>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('Android/app-release.apk')">
+                        <span><a target="_blank">apk下載[點這]</a></span>
                     </div>
-                    <div class="col-md-4 btn btn-one">
-                        <span><a href="https://github.com/chenhung0506/linebot" target="_blank" onclick="subgo()">Git連結[點此]</a></span>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/GreedSnack')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
                     </div>
                     <div class="col-md-8">
-						<iframe src="linebot.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+						<iframe src="chat.html" width="100%" frameborder="0" scrolling="no" style="height: 100vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--sidenav-->
+        <div id="mySidenav5" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(5)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('Android/app-release.apk')">
+                        <span><a target="_blank">apk下載[點這]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/GreedSnack')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
+                    </div>
+                    <div class="col-md-8">
+						<iframe src="greedSnake.html" width="100%" frameborder="0" scrolling="no" style="height: 100vh"></iframe>
                     </div>
                 </div>
             </div>
@@ -230,11 +286,11 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">&times;</a><!--close btn-->
             <div class="container">
                 <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one">
-                        <span><a href="https://ivoting.ga/adminGo" target="_blank" class="">造訪網站[點此]</a></span>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('Android/app-release.apk')">
+                        <span>造訪網站[點此]</span>
                     </div>
-                    <div class="col-md-4 btn btn-one">
-                        <span><a href="https://ivoting.ga/adminGo" target="_blank" class="">Git連結[點此]</a></span>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/avalon')">
+                        <span>Git連結[點此]</span>
                     </div>
                     <div class="col-md-8">
 						<iframe src="avalon.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
@@ -242,40 +298,14 @@
                 </div>
             </div>
         </div>
-		
-        <!--sidenav-->
-        <div id="mySidenav5" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(5)">&times;</a><!--close btn-->
-            <!--sidenav content-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one">
-                        <span><a href="https://ivoting.ga/adminGo" target="_blank" class="">造訪網站[點此]</a></span>
-                    </div>
-                    <div class="col-md-4 btn btn-one">
-                        <span><a href="https://ivoting.ga/adminGo" target="_blank" class="">Git連結[點此]</a></span>
-                    </div>
-                    <div class="col-md-8">
-						<iframe src="greedSnake.html" width="100%" frameborder="0" scrolling="no" style="height: 100vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="mySidenav7" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(7)">&times;</a><!--close btn-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-md-6 btn btn-one">
-                        <span><a href="https://ivoting.ga/adminGo" target="_blank" class="">造訪網站[點此]</a></span>
-                    </div>
-                    <div class="col-md-6 btn btn-one">
-                        <span><a href="https://ivoting.ga/adminGo" target="_blank" class="">Git連結[點此]</a></span>
-                    </div>
-                    <div class="col-md-12">
-                        <iframe src="university.html" width="100%" frameborder="0" scrolling="no" style="height: 100vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <script>
+        function hrefToUrl(url){
+            console.log('success');
+            window.open(url, '_blank');
+            // location.href = url;
+        }
+        $(document).ready(function() {
+        });
+        </script>
     </body>
 </html>
