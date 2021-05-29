@@ -187,28 +187,41 @@ h3{
  ------------------------------------------------------------ */
 .box-1 { background-color: #141414; }
 
+.padding-0 {
+	padding-right: 0px;
+  padding-left: 0px;
+}
+
 .btn {
-       line-height: 50px;
-       height: 58px;
+       line-height: 34px;
+       height: 42px;
        text-align: center;
-       width: 250px;
+       /* width: 250px; */
        cursor: pointer;
-       margin: 1px 0 1.5px 0;
+       margin: 1px 0 1px 0;
 }
 .btn-one {
        color: #FFF;
        transition: all 0.3s;
        position: relative;
+			 margin: 100;
 }
 
 .btn-one span {
        transition: all 0.3s;
        top: 0;
-       font-size: 2em;
+       font-size: 1.5em;
        font-weight: bold;
-       margin: 0 0 0 0;
        transform-origin: 0 0;
+			 /* text-shadow: 0px 0px 2px #fdf7e5; */
+			 /* color: #fdf7e5; */
 }
+
+@media only screen and (max-device-width : 770px){
+	.btn-one span{
+		font-size: 9px;
+	 }
+ }
 
  .btn-one::before {
        content: '';
