@@ -2,7 +2,7 @@
 build() {
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
   BUILDROOT=$DIR/..
-  cmd="DOCKER_BUILDKIT=1 docker build -t $REPO/$CONTAINER:$TAG -f $DIR/Dockerfile $BUILDROOT"
+  cmd="DOCKER_BUILDKIT=1 docker build -t $REPO/$CONTAINER:$TAG -f $DIR/Dockerfile $BUILDROOT --no-cache=true"
   # cmd="DOCKER_BUILDKIT=1 docker build -t $DOCKER_IMAGE -f $DIR/Dockerfile $BUILDROOT --no-cache=true"
   echo $cmd
   eval $cmd
