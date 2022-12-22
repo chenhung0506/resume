@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   web:
-    image: harbor.chlin.tk/vue/resume:${TAG}
+    image: harbor.linch.ml/vue/resume:${TAG}
     container_name: resume
     volumes:
       - ~/volumes/resume:/usr/src/app/logs

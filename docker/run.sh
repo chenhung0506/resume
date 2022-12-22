@@ -10,7 +10,7 @@ source ${WORK_PATH}/build.sh
 
 ENV=dev.env
 export TAG='latest'
-export REPO=harbor.chlin.tk/vue
+export REPO=harbor.linch.ml/vue
 export CONTAINER=resume
 
 getopts_help $@
