@@ -23,15 +23,14 @@
     }
 
     .section {
-      height: 80vh;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2em;
-      transition: transform 1s ease, opacity 1s ease;
-      transform: scale(0.8);
-      opacity: 0.5;
+      transition: height 1s ease, opacity 1s ease;
+      height: 0vh;
+      opacity: 0;
       scroll-snap-align: center;
       position: relative;
       margin: 0;
@@ -45,11 +44,11 @@
       top: 0;
       left: 0;
       overflow: hidden;
-      background: #fff; /* Remove transparency */
+      background: #fff;
     }
 
     .section.active {
-      transform: scale(1);
+      height: 80vh;
       opacity: 1;
     }
 
@@ -62,6 +61,7 @@
       font-size: 1.2em;
       background-color: #ccc;
       margin: 0;
+      cursor: pointer;
     }
 
     .shrink:nth-child(even) {
@@ -80,46 +80,65 @@
 </head>
 <body>
   <div class="container">
-    <div class="shrink">Resume</div>
+    <div class="shrink" data-target="section1">Resume</div>
     <div class="section" id="section1">
       <iframe src="linch-resume.html"></iframe>
     </div>
-    <div class="shrink">Certificate</div>
+    <div class="shrink" data-target="section2">Certificate</div>
     <div class="section" id="section2">
-        <iframe src="certificate.html"></iframe>
+      <iframe src="certificate.html"></iframe>
     </div>
-    <div class="shrink">Architecture</div>
+    <div class="shrink" data-target="section3">Architecture</div>
     <div class="section" id="section3">
       <iframe src="certificate.html"></iframe>
     </div>
-    <div class="shrink">Other</div>
+    <div class="shrink" data-target="section4">Other</div>
     <div class="section" id="section4">Discover Section 4</div>
-    <div class="shrink">Thanks</div>
+    <div class="shrink" data-target="section5">Thanks</div>
     <div class="section" id="section5">Thanks for Reaching my Website</div>
+    
   </div>
 
   <script>
     const sections = document.querySelectorAll('.section');
     const shrinks = document.querySelectorAll('.shrink');
+    const element = document.querySelector('#section1');
+    // Click event for shrinks
+    shrinks.forEach(shrink => {
+      shrink.addEventListener('click', () => {
+        const targetId = shrink.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        shrink.scrollIntoView({
+          behavior: 'smooth', // 滾動動畫效果
+          block: 'start',     // 垂直對齊 ('start', 'center', 'end', 'nearest')
+          inline: 'nearest'   // 水平對齊
+        });
+        // Toggle the section visibility
+        if (targetSection.classList.contains('active')) {
+          targetSection.classList.remove('active');
+          targetSection.style.height = '0vh';
+          targetSection.style.opacity = '0';
+        } else {
+          // Collapse all sections
+          sections.forEach(section => {
+            section.classList.remove('active');
+            section.style.height = '0vh';
+            section.style.opacity = '0';
+          });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          sections.forEach(section => section.classList.remove('active'));
-          shrinks.forEach(shrink => shrink.classList.remove('active'));
-
-          if (entry.target.classList.contains('section')) {
-            entry.target.classList.add('active');
-          } else if (entry.target.classList.contains('shrink')) {
-            entry.target.classList.add('active');
-          }
+          // Expand the clicked section
+          targetSection.classList.add('active');
+          targetSection.style.height = '80vh';
+          targetSection.style.opacity = '1';
         }
-      });
-    }, {
-      threshold: 0.5 // Trigger when at least 50% is visible
-    });
 
-    [...sections, ...shrinks].forEach(element => observer.observe(element));
+        // Move the clicked shrink section to the top of the screen
+        const shrinkPosition = shrink.getBoundingClientRect().top + window.scrollY;
+        console.log(shrinkPosition)
+        console.log(shrinkPosition - 10 * window.innerHeight / 100)
+        window.scrollTo({top: 0,behavior: 'smooth'});
+      });
+    });
   </script>
 </body>
 </html>
