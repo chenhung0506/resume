@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll to Expand Subpages</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      transform: translateY(100px);
+      opacity: 0;
+    }
+
+    .section.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .section:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    .section:nth-child(odd) {
+      background-color: #ddd;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+  <div class="section" id="section1">
+    <div class="row justify-content-center mt-4">
+                
+      <div class="col-md-4">
+          <h1>About me</h1>
+      </div>
+      <div class="col-md-4">
+          <ul class="bmenu">
+              <li><a href="#" onclick="openNav(0)">RESUME</a></li>
+              <li><a href="#" onclick="openNav(1)">Certificate</a></li>
+          </ul>
+      </div>
+      <div class="col-md-8"><div class="hr"></div></div>
+  </div>
+  </div>
+  <div class="section" id="section2">
+    <div class="row justify-content-center">
+        <div class="col-md-8"><div class="hr"></div></div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        
+        <div class="col-md-4">
+            <h1>About me</h1>
+        </div>
+        <div class="col-md-4">
+            <ul class="bmenu">
+                <li><a href="#" onclick="openNav(0)">RESUME</a></li>
+                <li><a href="#" onclick="openNav(1)">Certificate</a></li>
+            </ul>
+        </div>
+        <div class="col-md-8"><div class="hr"></div></div>
+    </div>
+
+  </div>
+  <div class="section" id="section3">Explore Section 3</div>
+  <div class="section" id="section4">Discover Section 4</div>
+  <div class="section" id="section5">Thanks for Reaching Section 5</div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Optional: stop observing once active
+        }
+      });
+    }, {
+      threshold: 0.5 // Trigger when 50% of the section is visible
+    });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
