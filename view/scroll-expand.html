@@ -11,6 +11,8 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      background: url('img/bg-horizontal.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
 
     .container {
@@ -22,6 +24,7 @@
 
     .section {
       height: 80vh;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -30,6 +33,19 @@
       transform: scale(0.8);
       opacity: 0.5;
       scroll-snap-align: center;
+      position: relative;
+      margin: 0;
+    }
+
+    .section iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      background: #fff; /* Remove transparency */
     }
 
     .section.active {
@@ -39,11 +55,13 @@
 
     .shrink {
       height: 10vh;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2em;
       background-color: #ccc;
+      margin: 0;
     }
 
     .shrink:nth-child(even) {
@@ -63,15 +81,21 @@
 <body>
   <div class="container">
     <div class="shrink">Resume</div>
-    <div class="section" id="section1">Welcome to Section 1</div>
+    <div class="section" id="section1">
+      <iframe src="linch-resume.html"></iframe>
+    </div>
     <div class="shrink">Certificate</div>
-    <div class="section" id="section2">This is Section 2</div>
+    <div class="section" id="section2">
+        <iframe src="certificate.html"></iframe>
+    </div>
     <div class="shrink">Architecture</div>
-    <div class="section" id="section3">Explore Section 3</div>
+    <div class="section" id="section3">
+      <iframe src="certificate.html"></iframe>
+    </div>
     <div class="shrink">Other</div>
     <div class="section" id="section4">Discover Section 4</div>
     <div class="shrink">Thanks</div>
-    <div class="section" id="section5">Thanks for Reaching Section 5</div>
+    <div class="section" id="section5">Thanks for Reaching my Website</div>
   </div>
 
   <script>
