@@ -13,8 +13,18 @@
       overflow: hidden;
       background: url('img/bg-horizontal.jpg') no-repeat center center fixed;
       background-size: cover;
+      padding: 0;
     }
 
+    iframe {
+        z-index: 10;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        border: none;
+        background: transparent; /* 確保 iframe 背景透明 */
+    }
+    
     .container {
       position: relative;
       height: 100vh;
@@ -53,36 +63,36 @@
     }
 
     .shrink {
+      text-shadow: 0px 0px 2px #eeb213;
+      color: #eeb213;
+      background: rgba(0,0,0,0.7);
       height: 10vh;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2em;
-      background-color: #ccc;
-      margin: 0;
+      margin: 2px;
       cursor: pointer;
     }
 
-    .shrink:nth-child(even) {
-      background-color: #f0f0f0;
-    }
-
-    .shrink:nth-child(odd) {
-      background-color: #ddd;
+    .shrink:hover {
+      background: rgba(0,0,0,1);
+      text-shadow: 0px 0px 1px #eeb213;
     }
 
     .shrink.active {
-      background-color: #aaa;
-      color: #fff;
+      background: rgba(0,0,1,1);
+      opacity: 0.7;
     }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <div class="shrink" data-target="section1">Resume</div>
     <div class="section" id="section1">
-      <iframe src="linch-resume.html"></iframe>
+      <iframe src="resume.html" style="background: transparent;" allowtransparency="true"></iframe>
     </div>
     <div class="shrink" data-target="section2">Certificate</div>
     <div class="section" id="section2">
@@ -90,7 +100,7 @@
     </div>
     <div class="shrink" data-target="section3">Architecture</div>
     <div class="section" id="section3">
-      <iframe src="certificate.html"></iframe>
+      <iframe src="iframe.html"></iframe>
     </div>
     <div class="shrink" data-target="section4">Other</div>
     <div class="section" id="section4">Discover Section 4</div>
