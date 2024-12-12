@@ -113,6 +113,38 @@
     const sections = document.querySelectorAll('.section');
     const shrinks = document.querySelectorAll('.shrink');
     const element = document.querySelector('#section1');
+    let activeIndex = 0; // 目前展開的 section 索引
+
+    function expandSection(index) {
+      // 收合所有 Sections
+      sections.forEach((section, i) => {
+        if (i === index) {
+          section.style.height = '80vh';
+          section.style.opacity = '1';
+        } else {
+          section.style.height = '0vh';
+          section.style.opacity = '0';
+        }
+      });
+    }
+
+    function handleScroll(event) {
+      console.log(event.deltaY);
+      if (event.deltaY > 0) {
+        console.log("向下滾動");
+        activeIndex = Math.min(activeIndex + 1, sections.length - 1);
+      } else if (event.deltaY < 0) {
+        console.log("向上滾動");
+        activeIndex = Math.max(activeIndex - 1, 0);
+      }
+      expandSection(activeIndex);
+    }
+
+    // 初始展開第一個 Section
+    expandSection(activeIndex);
+
+    // 監聽滑鼠滾輪事件
+    document.addEventListener('wheel', handleScroll);
     // Click event for shrinks
     shrinks.forEach(shrink => {
       shrink.addEventListener('click', () => {
