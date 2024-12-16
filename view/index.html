@@ -1,305 +1,698 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>林宸宏</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<!--[if IE]>
-			<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
-		<![endif]-->
-    </head>
-    <body id="app" style="background-image: url(img/pattern.png), url(img/bg-vertical.jpg);">
-        <div class="container">
-            <!--about-->
-            <div class="row justify-content-center">
-                <div class="col-md-8"><div class="hr"></div></div>
-            </div>
-            <div class="row justify-content-center mt-4">
-                
-                <div class="col-md-4">
-                    <h1>About me</h1>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><a href="#" onclick="openNav(0)">RESUME</a></li>
-                        <li><a href="#" onclick="openNav(1)">Certificate</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-8"><div class="hr"></div></div>
-            </div>
-            <!--project-->
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
-                    <h2>Architecture</h2>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><a href="#" onclick="openNav(10)">architecture</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
-                    <h2>Python Project</h2>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><h3>LineBot</h3><a href="#" onclick="openNav(4)">LineBot</a></li>
-                        <li><h3>Flask MVC</h3><a href="#" onclick="openNav(7)">University</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
-                    <h2>Java Project</h2>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><h3>Spring3 MVC</h3><a href="#" onclick="openNav(3)">iVoting</a></li>
-                        <li><h3>SpringBoot</h3><a href="#" onclick="openNav(8)">Chat</a></li>
-                        <li><h3>Android</h3><a href="#" onclick="openNav(5)">GreedSnake</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
-                    <h2>VUE Project</h2>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><h3>Websocket</h3><a href="#" onclick="openNav(8)">Chat-ui</a></li>
-                        <li><h3>FireBase</h3><a href="#" onclick="openNav(2)">Avalon</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
-                    <h2>Nginx</h2>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><h3>Proxy</h3><a href="" onclick="hrefToUrl('https://github.com/chenhung0506/reverse-proxy/tree/master/docker')">Chat-ui</a></li>
-                        <li><h3>Reverse-Proxy</h3><a href="" onclick="hrefToUrl('https://github.com/chenhung0506/reverse-proxy-demo')">reverse-proxy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-8"><div class="hr"></div></div>
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
-                    <h2>SRE service</h2>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bmenu">
-                        <li><a href="https://harbor.linch.ml" target="_blank">Harbor</a></li>
-                        <li><a href="https://jenkins.linch.ml" target="_blank">Jenkins</a></li>
-                        <li><a href="https://blog.linch.ml" target="_blank">WordPress</a></li>
-                        <li><a href="" target="_blank">MySql & Redis</a></li>
-                    </ul>
-                </div>
-                
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chen-hung Resume</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden; 
+      overflow: hidden;
+      background: url('img/bg-horizontal.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 0;
+    }
+    
+    html { scroll-behavior: smooth; }
+
+    iframe {
+        z-index: 10;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        border: none;
+        background: transparent; /* 確保 iframe 背景透明 */
+    }
+    
+    .container {
+      position: relative;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    .section {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      height: 0vh;
+      opacity: 0;
+      scroll-snap-align: center;
+      position: relative;
+      transition: height 1s ease, opacity 1s ease;
+    }
+
+    .section iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .section.active {
+      height: 85vh;
+      opacity: 1;
+    }
+
+    .shrink {
+      text-shadow: 0px 0px 2px #eeb213;
+      font-weight: bold;
+      text-shadow: 2px 4px 5px #7d5c05;
+      color: #eeb213;
+      background: rgba(0,0,0,0.8);
+      height: 8vh;
+      width: 99.8%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      margin: 2px;
+      cursor: pointer;
+    }
+
+    .shrink:hover {
+      background: rgba(0,0,0,1);
+      text-shadow: 0px 0px 1px #eeb213;
+    }
+
+    .shrink.active {
+      background: rgba(0,0,1,1);
+      opacity: 0.7;
+    }
+    /* Resume */
+    .container-resume {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      /* transform: translateY(0em); */
+      overflow-y: auto; /* 獨立滾動條 */
+      max-height: 70vh; /* 設定高度以啟用滾動條 */
+    }
+
+    .container-resume::-webkit-scrollbar {
+      width: 8px; /* 捲動條寬度 */
+    }
+
+    .container-resume::-webkit-scrollbar-thumb {
+      background-color: #cccccc; /* 捲動條滑塊顏色 */
+      border-radius: 10px; /* 圓角 */
+    }
+
+    .container-resume::-webkit-scrollbar-track {
+      background-color: #f0f0f0; /* 捲動條軌道顏色 */
+    }
+
+    h3, h4, h5, h6 {color: #333; margin:0 0 1em 0;}
+    h5 {color: #333; margin:0.2em 0 0.2em 0;}
+    h6 {color: #333; margin:0 0 0.2em 0;}
+
+    .container-resume li {font-size: 1.3rem;}
+
+    .indent {
+        text-indent: 2em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin:0 0 1em 0;
+    }
+
+    ul li { margin: 5px 0;}
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .info {
+      background-color: rgba(223, 240, 216, 0.85);
+      color: #3c763d;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .info h6 {
+      color: #3c763d;
+      margin:0 0 0.2em 0;
+    }
+
+    .success {
+      background-color: rgba(217, 237, 247, 0.8);
+      color: #31708f;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .success h6 {
+      color: #31708f;
+      margin:0 0 0.2em 0;
+    }
+
+    .warning {
+      background-color: rgba(252, 248, 227, 0.9);
+      color: #8a6d3b;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .carousel {
+      position: relative;
+      width: 80%;
+      max-height: 83vh;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .section-img img {
+      max-height: 85vh; /* 限制圖片高度 */
+      max-width: 100%;  /* 限制圖片寬度不超過容器 */
+      width: auto;      /* 自動調整寬度保持比例 */
+      height: auto;     /* 自動調整高度保持比例 */
+      display: block;   /* 將圖片設為區塊元素 */
+      margin: auto;     /* 使圖片居中 */
+      object-fit: contain; /* 確保圖片等比例縮放且完整顯示 */
+    }
+
+    .carousel-item img {
+      max-height: 85vh; /* 限制高度為視窗的 85% */
+      width: auto;      /* 寬度自適應，保持比例 */
+      margin: auto;     /* 水平居中 */
+      object-fit: contain; /* 確保圖片保持比例 */
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .carousel-control.left {
+      left: 0;
+    }
+
+    .carousel-control.right {
+      right: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="shrink" data-target="section1">Resume</div>
+    <div class="section" id="section1">
+      <!-- ========== -->
+    <div class="container-resume">
+        <h3>Chen-hung Lin Resume</h3>
+        <h4>Personal information</h4>
+        <ul>
+            <li>Name: 林宸宏, ages: 34, height: 178 cm, weight 77 kg</li>
+            <li>English name: Chen Hung Lin</li>
+            <li>E-mail: <a href="mailto:chenhung0506@gmail.com">chenhung0506@gmail.com</a></li>
+            <li>Phone: 0919040448</li>
+        </ul>
+        <h4>License</h4>
+        <ul>
+            <li>Oracle OCA AD</li>
+        </ul>
+        <h4>Skills</h4>
+        <ul>
+            <li>Frontend: React (maintain)、VUE (maintain)、jQuery</li>
+            <li>Backend: Java 8-year、Python3 (Flask) 2-year、Golang 2-year、Kotlin 1-year</li>
+            <li>Dev-Skill: Docker、bash-shell、Nginx、Git</li>
+            <li>Java-Skill: AOP、JPA、mybatis、multi-thread、security</li>
+            <li>Tools: Kafka、RabbitMQ、Redis、ElasticSearch</li>
+            <li>Database: MS-SQL、MySQL、Oracle、Redis、FireBase、DynamoDB</li>
+            <li>OS: Mac、CentOs (Linux)</li>
+            <li>Cloud: AWS、GCP、Linode、Heroku</li>
+        </ul>
+
+        <h3>Employment history</h3>
+        <div class="success">
+            <h4>Company: Catchplay (台灣威亞科技)</h4>
+            <h5>Job: Backend Engineer</h5>
+            <h6>Since: 2023.09.01 ~ 2024.11.01</h6>
+            <h6>Salary: 1400k annually</h6>
+            <h5>Skills:</h5>
+            <ul>
+                <li>Framework: spring-boot(Java), Kotlin</li>
+                <li>DB: MySQL</li>
+                <li>OS: CentOs</li>
+                <li>Tools: Redis、RabbitMQ、ElasticSearch、DynamoDB</li>
+                <li>Dev-Skill: GraphQL、Flow、Docker、bash-shell、Git</li>
+            </ul>
+            <h5>Main develop:</h5>
+            <ul>
+                <li><strong>Concatenation AWS Recommendation:</strong></li>
+                <li class="indent">Use AWS Recommendations to replace existing algorithms</li>
+                <li><strong>Concatenation AWS DynamoDB:</strong></li>
+                <li class="indent">Provide users create personal playlist feature and like/subscribe features</li>
+                <li><strong>Concatenation AWS S3:</strong></li>
+                <li class="indent">User can upload personal videos to fanloop platform</li>
+            </ul>
+            <h5>Routine job:</h5>
+            <ul>
+                <li><strong>Catchplay: </strong></li>
+                <li class="indent">- Develop customized API for partners </li>
+                <li class="indent">- Add batch editing member info feature </li>
+                <li class="indent">- GraphQL API maintain</li>
+                <li><strong>Critical Bug fix: </strong></li>
+                <li class="indent">- Use Redis lock to prevent double-click</li>
+            </ul>
         </div>
 
-<div class="row justify-content-center mt-4">
-  <div class="col-md-7 contact-info">
-   <h2>Name: Chen hung Lin</h2>
-   <h2>Phone: 0919040448</h2>
-   <h2>Email:  <a href="chenhung0506@gmail.com" title="chenhung0506@gmail.com" target="_blank" class="">chenhung0506@gmail.com</a></h2>
+        <div class="info">
+            <h4>Company: Hytech (海科科技)</h4>
+            <h5>Job: Backend Engineer</h5>
+            <h6>Since: 2021.09.01 ~ 2023.08.31</h6>
+            <h6>Salary: 1250k annually</h6>
+            <h5>Skills:</h5>
+            <ul>
+                <li>Framework: spring-boot(Java), Flask(python), VUE, React</li>
+                <li>DB: MySQL</li>
+                <li>OS: CentOs</li>
+                <li>Tools: Redis、Kafka、Apollo、ElasticSearch</li>
+                <li>Dev-Skill: Docker、bash-shell、Git</li>
+                <li>Java-Skill: AOP、JPA、mybatis、multi-thread、synchronized、security</li>
+                <li>Design pattern: Strategy, Singleton, Template</li>
+            </ul>
+            <h5>Main develop:</h5>
+            <ul>
+                <li>Deposit bonus campaign (Java): </li><li class="indent">User will earn rewards after depositing</li>
+                <li>Refer a friend campaign (Java): </li><li class="indent">User will earn rewards after referring friends</li>
+                <li>Trading bonus campaign (Java): </li><li class="indent">User will earn rewards after trading specific lots</li>
+            </ul>
+            <h5>Routine job:</h5>
+              <ul>
+                  <li>Restful API: </li>
+                  <li class="indent">- Client Portal (Java)</li>
+                  <li class="indent">- Admin Portal (Java)</li>
+                  <li class="indent">- Campaign Report (Java, VUE)</li>
+                  <li class="indent">- Davinci Report (Python, React)</li>
+                  <li>Cronjob: </li>
+                  <li class="indent">- Commission job (Java)</li>
+                  <li class="indent">- Trade lots job (Java)</li>
+                  <li class="indent">- Status machine job (Java)</li>
+                  <li>Kafka: </li>
+                  <li class="indent">- Deposit consumer</li>
+                  <li class="indent">- Register consumer</li>
+                  <li class="indent">- Create account consumer</li>
+              </ul>
+        </div>
+        <div class="success">
+            <h4>Company: Emotibot (竹間智能)</h4>
+            <h5>Job: Backend Engineer</h5>
+            <h6>Since: 2019.09.01 ~ 2021.08.31</h6>
+            <h6>Salary: 850k annually</h6>
+            <h5>Skills:</h5>
+            <ul>
+                <li>Framework: Flask(python), spring-boot(Java), VUE</li>
+                <li>Server: nginx, tomcat</li>
+                <li>DB: ms-sql, mysql</li>
+                <li>OS: CentOs</li>
+                <li>Dev-Skill: Docker, bash-shell, Git, Jenkins</li>
+                <li>Tools: Redis, websocket, md5, sftp, mybatis, sftp, smtp, jwt, crontab, axios, promise</li>
+            </ul>
+            <h5>Main Develop:</h5>
+            <ul>
+                <li><strong>SSO (Single Sign On) (Java):</strong></li>
+                <li class="indent">- Allow clients to redirect from their system to ours</li>
+                <li><strong>Websocket Service (Java, VUE):</strong></li>
+                <li class="indent">- Provide users with a conversation window where they can chat with our chatbot.</li>
+                <li class="indent">- Product Link: <a href="https://www.kgibank.com/STP/html/comm/home.html" target="_blank">https://www.kgibank.com/STP/html/comm/home.html</a></li>
+            </ul>
+            <h5>Routine Job:</h5>
+            <ul>
+                <li><strong>LINEBOT, MESSENGER BOT (GO, Python):</strong></li>
+                <li class="indent">- Develop Restful API for partner (Java, GO, Python)</li>
+                <li class="indent">- Maintain Quality Inspection System (GO)</li>
+                <li class="indent">- FTP, webhook service: (Python)</li>
+                <li class="indent">- Proxy, reverse-proxy (Nginx)</li>
+                <li class="indent">- Maintain IDC server: Firewall, VPN, Port Forwarding, VMware</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h4>Company: Symphox (神坊資訊)</h4>
+            <h5>Job: Backend Engineer</h5>
+            <h6>Since: 2016.12.01 ~ 2019.08.31</h6>
+            <h6>Salary: 580k annually</h6>
+            <h5>Skills:</h5>
+            <ul>
+                <li>Framework: servlet, struts, spring2, spring3, spring5</li>
+                <li>Server: tomcat, jboss, websphere</li>
+                <li>DB: Oracle, ms-sql</li>
+                <li>Framework: Flask(python), spring-boot(Java)</li>
+                <li>Dev-Skill: Git, Jenkins</li>
+                <li>Tools: spring scheduler, security, jsp, mybatis, ibatis, cached, rollback, smtp, sftp, shtml, ajax, crontab, Google Analytics</li>
+            </ul>
+            <h5>Main Develop:</h5>
+            <ul>
+                <li><strong>Order Center System:</strong></li>
+                <li class="indent">- Accelerate the synchronization of logistics system to supplier system and provide reporting services</li>
+                <li><strong>Reorganize Android APP to WEB Service:</strong></li>
+                <li class="indent">- Abolition of the old version of the APP allows users to operate the warehousing system directly through their mobile phones</li>
+            </ul>
+            <h5>Routine Job:</h5>
+            <ul>
+                <li class="indent">- LMS WMS API concatenated</li>
+                <li class="indent">- SAP system concatenated</li>
+                <li class="indent">- Google Analytics API concatenated</li>
+                <li class="indent">- Logistics Management System (LMS)</li>
+                <li class="indent">- Supplier Management System (SUP)</li>
+                <li class="indent">- Warehousing Management System (WMS)</li>
+                <li class="indent">- Restful API development</li>
+                <li class="indent">- Crontab task development</li>
+                <li class="indent">- JSP development</li>
+                <li class="indent">- Alert email development</li>
+            </ul>
+            <h5>Fix critical bugs:</h5>
+            <ul>
+                <li class="indent">- Local file inclusion</li>
+                <li class="indent">- SQL injection</li>
+                <li class="indent">- Cross-site scripting</li>
+            </ul>
+        </div>
+
+<!-- ================================================================= -->
+        <div class="warning">
+            <h5>Side project</h5>
+            <ul>
+                <li>Framework: Flask(python), spring-boot(Java)</li>
+                <li>Server: nginx, tomcat</li>
+                <li>DB: MySQL</li>
+                <li>OS: CentOs</li>
+                <li>Cloud: GCP、Linode、Heroku</li>
+                <li>Dev-Skill: Docker、bash-shell、Git、Jenkins</li>
+                <li>Dev-tech: jwt, encrypt, md5, captcha, Google recaptcha, smtp, jquery</li>
+            </ul>
+        </div>
+
+        <h4>Education</h4>
+        <ul>
+            <li>Master of Science: 國立中央大學 (Hydrology and Ocean Sciences) - 2012/7~2015/6</li>
+            <li>Bachelor of Science: 私立逢甲大學 (Hydraulic Engineering and Conservation) - 2008/7~2012/6</li>
+        </ul>
+    </div>
+      <!-- ========== -->
+
+      
+    </div>
+    <div class="shrink" data-target="section2">Architecture</div>
+    <div class="section" id="section2">
+      <div class="section-img">
+        <img src="img/architecture2.png">
+      </div>
+    </div>
+    <div class="shrink" data-target="section3">Chat-Bot</div>
+    <div class="section" id="section3">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="img/8-0.jpg" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-1.jpg" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-2.jpg" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-3.jpg" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-4.jpg" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-5.jpg" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-6.jpg" alt="Image 5">
+          </div>
+        </div>
+        <div class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</div>
+        <div class="carousel-control right" onclick="moveCarousel(1)">&#10095;</div>
+      </div>
+    </div>
+    <div class="shrink" data-target="section4">Certificate</div>
+    <div class="section" id="section4">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="img/1-2.png" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/1-3.png" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="img/1-4.png" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="img/1-5.png" alt="Image 5">
+          </div>
+          <div class="carousel-item">
+            <img src="img/1-6.png" alt="Image 6">
+          </div>
+          <div class="carousel-item">
+            <img src="img/1-7.png" alt="Image 7">
+          </div>
+        </div>
+        <div class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</div>
+        <div class="carousel-control right" onclick="moveCarousel(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div class="shrink" data-target="section5">iVoting</div>
+    <div class="section" id="section5">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="img/5-1.png" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-2.png" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-3.png" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-4.png" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-5.png" alt="Image 5">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-6.png" alt="Image 6">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-7.png" alt="Image 7">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-8.png" alt="Image 8">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-9.png" alt="Image 9">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5-10.png" alt="Image 10">
+          </div>
+        </div>
+        <div class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</div>
+        <div class="carousel-control right" onclick="moveCarousel(1)">&#10095;</div>
+      </div>
+    </div>
+    
+
+    <div class="shrink" data-target="section6">University</div>
+    <div class="section" id="section6">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="img/7-1.png" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/7-2.png" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/7-3.png" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="img/7-4.png" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="img/7-5.png" alt="Image 5">
+          </div>
+          <div class="carousel-item">
+            <img src="img/7-6.png" alt="Image 6">
+          </div>
+        </div>
+        <div class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</div>
+        <div class="carousel-control right" onclick="moveCarousel(1)">&#10095;</div>
+      </div>
+    </div>
+    
+
+    <div class="shrink" data-target="section7">Thanks</div>
+    <div class="section" id="section7">Thanks for Reaching my Website</div>
+    
   </div>
-  <div class="col-md-8"><div class="hr"></div></div>
-</div>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script>
-        function openNav(num) {
-            document.getElementById("mySidenav"+num).style.width = "100%";
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const shrinks = document.querySelectorAll('.shrink');
+    const element = document.querySelector('#section1');
+    const containerResume = document.querySelector('.container-resume');
+    containerResume.addEventListener('mouseover', () => isMouseInsideResume = true);
+    containerResume.addEventListener('mouseleave', () => isMouseInsideResume = false);
+
+    let activeIndex = 0; // 目前展開的 section 索引
+    let isMouseInsideResume = false;
+
+    const section2 = document.querySelector('#section2');
+    let scrollTimeout;
+
+
+    // 阻止外層的滾動行為
+    document.addEventListener('wheel', (event) => {
+      if (isMouseInsideResume) { event.stopPropagation();}
+    });
+
+    function expandSection(index) {
+      sections.forEach((section, i) => {
+        if (i === index) {
+          section.style.height = '85vh';
+          section.style.opacity = '1';
+        } else {
+          section.style.height = '0vh';
+          section.style.opacity = '0';
         }
-        function closeNav(num) {
-            document.getElementById("mySidenav"+num).style.width = "0";
+      });
+    }
+
+    function handleScroll(event) {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      if (!isMouseInsideResume && event.deltaY > 0) {
+        activeIndex = Math.min(activeIndex + 1, sections.length - 1);
+      } else if (!isMouseInsideResume && event.deltaY < 0) {
+        activeIndex = Math.max(activeIndex - 1, 0);
+      }
+      expandSection(activeIndex);
+      scrollTimeout = setTimeout(() => {
+        // Allow scroll again after 1 second
+      }, 1000);
+    }
+
+    // 初始展開第一個 Section
+    expandSection(activeIndex);
+
+    // 監聽滑鼠滾輪事件
+    document.addEventListener('wheel', handleScroll);
+
+
+
+    // Click event for shrinks
+    shrinks.forEach(shrink => {
+      shrink.addEventListener('click', () => {
+        const targetId = shrink.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        // Toggle the section visibility
+        if (targetSection.classList.contains('active')) {
+          targetSection.classList.remove('active');
+          targetSection.style.height = '0vh';
+          targetSection.style.opacity = '0';
+        } else {
+          // Collapse all sections
+          sections.forEach(section => {
+            section.classList.remove('active');
+            section.style.height = '0vh';
+            section.style.opacity = '0';
+          });
+
+          // Expand the clicked section
+          targetSection.classList.add('active');
+          targetSection.style.height = '85vh';
+          targetSection.style.opacity = '1';
         }
-        $(function () {
-            reloadBackGroundImage()
-            function reloadBackGroundImage() {
-                if( $( window ).width() < 601 ) {
-                    $('#app').css('background-image', 'url(img/pattern.png), url(img/bg-vertical.jpg)');
-                } else {
-                    $('#app').css('background-image', 'url(img/pattern.png), url(img/bg-horizontal.jpg)');
-                }
-            }
-            $( window ).resize(function() {
-                reloadBackGroundImage()
-            });
-        })
-        </script>
 
+        // Move the clicked shrink section to the top of the screen
+        const shrinkPosition = shrink.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({top: 0,behavior: 'smooth'});
+      });
+    });
 
-        <!--sidenav-->
-        <div id="mySidenav0" class="sidenav rotate">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(0)">&times;</a><!--close btn-->
-            <!--sidenav content-->
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <h2>Autobiography</h2>
-                        <iframe src="resume.html" width="100%" frameborder="0" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+    document.querySelectorAll('.carousel').forEach(carousel => {
+    const carouselInner = carousel.querySelector('.carousel-inner');
+    const carouselItems = carousel.querySelectorAll('.carousel-item');
+    const leftControl = carousel.querySelector('.carousel-control.left');
+    const rightControl = carousel.querySelector('.carousel-control.right');
+    let currentIndex = 0;
 
-        <!--sidenav-->
-        <div id="mySidenav1" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(1)">&times;</a><!--close btn-->
-            <!--sidenav content-->
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <h7>&emsp;</h7>
-						<h2>Certificate</h2>
-						<iframe src="certificate.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+    }
 
-        <!--sidenav content-->
-        <div id="mySidenav10" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(10)">&times;</a>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <h2>Architecture</h2>
-						<img src="img/architecture.jpg" width="100%" frameborder="0" scrolling="no" style="height: 97vh">
-                    </div>
-                </div>
-            </div>
-        </div>
+    function moveCarousel(direction) {
+        currentIndex = (currentIndex + direction + carouselItems.length) % carouselItems.length;
+        updateCarousel();
+    }
 
-        <!--linebot-->
-        <div id="mySidenav4" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(4)">&times;</a>
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-4 btn btn-one" onclick="hrefToUrl('https://lin.ee/oJo6HsB')">
-                        <span><a target="_blank">開啟機器人</a></span>
-                    </div>
-                    <div class="col-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/linebot')">
-                        <span><a target="_blank">Git連結</a></span>
-                    </div>
-                    <div class="col-8 padding-0">
-						<iframe src="linebot.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+    // Add click event listeners for controls
+    if (leftControl) {
+        leftControl.addEventListener('click', () => moveCarousel(-1));
+    }
+    if (rightControl) {
+        rightControl.addEventListener('click', () => moveCarousel(1));
+    }
 
-        <!--university-->
-        <div id="mySidenav7" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(7)">&times;</a><!--close btn-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://university.linch.ml')">
-                        <span><a target="_blank">造訪首頁[點此]</a></span>
-                    </div>
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://university.linch.ml/admin')">
-                        <span><a target="_blank">造訪後台[點此]</a></span>
-                    </div>
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/university-demo')">
-                        <span><a target="_blank">Git連結[點此]</a></span>
-                    </div>
-                    <div class="col-md-12">
-                        <iframe src="university.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+    // Set up auto-play functionality
+    setInterval(() => {
+        moveCarousel(1);
+    }, 2000);
 
-        <!--sidenav-->
-        <div id="mySidenav3" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(3)">&times;</a><!--close btn-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://ivoting.linch.ml')">
-                        <span><a target="_blank">造訪首頁[點此]</a></span>
-                    </div>
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://ivoting.linch.ml/admin')">
-                        <span><a target="_blank">造訪後台[點此]</a></span>
-                    </div>
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/iVoting')">
-                        <span><a target="_blank">Git連結[點此]</a></span>
-                    </div>
-                    <div class="col-md-12">
-                        <iframe src="iVoting.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--sidenav-->
-        <div id="mySidenav8" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(8)">&times;</a><!--close btn-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-3 btn btn-one" onclick="hrefToUrl('https://chat.linch.ml')">
-                        <span>造訪網站</span>
-                    </div>
-                    <div class="col-3 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/websocket-ui')">
-                        <span>前端Git</span>
-                    </div>
-                    <div class="col-3 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/websocket')">
-                        <span>後端Git</span>
-                    </div>
-                    <div class="col-md-9">
-						<iframe src="chat.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--sidenav-->
-        <div id="mySidenav5" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(5)">&times;</a><!--close btn-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('Android/app-release.apk')">
-                        <span><a target="_blank">apk下載[點這]</a></span>
-                    </div>
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/GreedSnack')">
-                        <span><a target="_blank">Git連結[點此]</a></span>
-                    </div>
-                    <div class="col-md-8">
-						<iframe src="greedSnake.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="mySidenav2" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">&times;</a><!--close btn-->
-            <div class="container">
-                <div class="row justify-content-center box-1">
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://avalon.linch.ml')">
-                        <span>造訪網站[點此]</span>
-                    </div>
-                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/avalon')">
-                        <span>Git連結[點此]</span>
-                    </div>
-                    <div class="col-md-8">
-						<iframe src="avalon.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-        function hrefToUrl(url){
-            console.log('success');
-            window.open(url, '_blank');
-            // location.href = url;
-        }
-        $(document).ready(function() {
-        });
-        </script>
-    </body>
+    // Initialize carousel position
+    updateCarousel();
+  });
+  </script>
+</body>
 </html>

@@ -1,192 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chen-hung Lin Resume</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: transparent; /* 確保背景透明 */
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* 半透明遮罩 */
-            z-index: -1;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1; /* 確保內容在遮罩層之上 */
-            width: 40%;
-            margin: auto;
-            background-color: #fff; /* 不透明背景 */
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            transform: translateY(1em);
-        }
-
-        h1, h2, h3, h4 {
-            color: #333;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 5px 0;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        .info {
-            background-color: #dff0d8;
-            color: #3c763d;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-
-        .success {
-            background-color: #d9edf7;
-            color: #31708f;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-
-        .warning {
-            background-color: #fcf8e3;
-            color: #8a6d3b;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Chen-hung Lin Resume</h1>
-        <h2>Personal information</h2>
-        <ul>
-            <li>Name: 林宸宏, ages: 34, height: 178 cm, weight 77 kg</li>
-            <li>English name: Chen Hung Lin</li>
-            <li>E-mail: <a href="mailto:chenhung0506@gmail.com">chenhung0506@gmail.com</a></li>
-            <li>Address: 台北市士林區社子街＊＊＊號</li>
-            <li>Phone: 0919040448</li>
-        </ul>
-        <h2>License</h2>
-        <ul>
-            <li>Oracle OCA AD</li>
-        </ul>
-        <h2>Skills</h2>
-        <ul>
-            <li>Frontend: React (maintain)、VUE (maintain)、jQuery</li>
-            <li>Backend: Java 8-year、Python3 (Flask) 2-year、Golang 2-year、Kotlin 1-year</li>
-            <li>Dev-Skill: Docker、bash-shell、Nginx、Git</li>
-            <li>Java-Skill: AOP、JPA、mybatis、multi-thread、security</li>
-            <li>Tools: Kafka、RabbitMQ、Redis、ElasticSearch</li>
-            <li>Database: MS-SQL、MySQL、Oracle、Redis、FireBase、DynamoDB</li>
-            <li>OS: Mac、CentOs (Linux)</li>
-            <li>Cloud: AWS、GCP、Linode、Heroku</li>
-        </ul>
-
-        <h2>Employment history</h2>
-        <div class="success">
-            <h3>Company: Catchplay (台灣威亞科技)</h3>
-            <h4>Job: Backend Engineer</h4>
-            <p>Since: 2023.09.01 ~ 2024.11.01</p>
-            <p>Salary: 1400k annually</p>
-            <h4>Skills:</h4>
-            <ul>
-                <li>Framework: spring-boot(Java), Kotlin</li>
-                <li>DB: MySQL</li>
-                <li>OS: CentOs</li>
-                <li>Tools: Redis、RabbitMQ、ElasticSearch、DynamoDB</li>
-                <li>Dev-Skill: GraphQL、Flow、Docker、bash-shell、Git</li>
-            </ul>
-            <h4>Main develop:</h4>
-            <ul>
-                <li>Concatenation AWS Recommendation: Use AWS Recommendations to replace existing algorithms</li>
-                <li>Concatenation AWS DynamoDB: Provide users create personal playlist feature and like/subscribe features</li>
-                <li>Concatenation AWS S3: User can upload personal videos to fanloop platform</li>
-            </ul>
-            <h4>Routine job:</h4>
-            <ul>
-                <li>Catchplay: Develop customized API for partners, add batch editing member info feature, GraphQL API maintain</li>
-                <li>Critical Bug fix: Use Redis lock to prevent double-click</li>
-            </ul>
+    <head>
+        <title>林宸宏</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
+		<![endif]-->
+    </head>
+    <body id="app" style="background-image: url(img/pattern.png), url(img/bg-vertical.jpg);">
+        <div class="container">
+            <!--about-->
+            <div class="row justify-content-center">
+                <div class="col-md-8"><div class="hr"></div></div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                
+                <div class="col-md-4">
+                    <h1>About me</h1>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><a href="#" onclick="openNav(0)">RESUME</a></li>
+                        <li><a href="#" onclick="openNav(1)">Certificate</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-8"><div class="hr"></div></div>
+            </div>
+            <!--project-->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <h2>Architecture</h2>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><a href="#" onclick="openNav(10)">architecture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <h2>Python Project</h2>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><h3>LineBot</h3><a href="#" onclick="openNav(4)">LineBot</a></li>
+                        <li><h3>Flask MVC</h3><a href="#" onclick="openNav(7)">University</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <h2>Java Project</h2>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><h3>Spring3 MVC</h3><a href="#" onclick="openNav(3)">iVoting</a></li>
+                        <li><h3>SpringBoot</h3><a href="#" onclick="openNav(8)">Chat</a></li>
+                        <li><h3>Android</h3><a href="#" onclick="openNav(5)">GreedSnake</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <h2>VUE Project</h2>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><h3>Websocket</h3><a href="#" onclick="openNav(8)">Chat-ui</a></li>
+                        <li><h3>FireBase</h3><a href="#" onclick="openNav(2)">Avalon</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <h2>Nginx</h2>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><h3>Proxy</h3><a href="" onclick="hrefToUrl('https://github.com/chenhung0506/reverse-proxy/tree/master/docker')">Chat-ui</a></li>
+                        <li><h3>Reverse-Proxy</h3><a href="" onclick="hrefToUrl('https://github.com/chenhung0506/reverse-proxy-demo')">reverse-proxy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-8"><div class="hr"></div></div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4">
+                    <h2>SRE service</h2>
+                </div>
+                <div class="col-md-4">
+                    <ul class="bmenu">
+                        <li><a href="https://harbor.linch.ml" target="_blank">Harbor</a></li>
+                        <li><a href="https://jenkins.linch.ml" target="_blank">Jenkins</a></li>
+                        <li><a href="https://blog.linch.ml" target="_blank">WordPress</a></li>
+                        <li><a href="" target="_blank">MySql & Redis</a></li>
+                    </ul>
+                </div>
+                
+            </div>
         </div>
 
-        <div class="info">
-            <h3>Company: Hytech (海科科技)</h3>
-            <h4>Job: Backend Engineer</h4>
-            <p>Since: 2021.09.01 ~ 2023.08.31</p>
-            <p>Salary: 1250k annually</p>
-            <h4>Skills:</h4>
-            <ul>
-                <li>Framework: spring-boot(Java), Flask(python), VUE, React</li>
-                <li>DB: MySQL</li>
-                <li>OS: CentOs</li>
-                <li>Tools: Redis、Kafka、Apollo、ElasticSearch</li>
-                <li>Dev-Skill: Docker、bash-shell、Git</li>
-                <li>Java-Skill: AOP、JPA、mybatis、multi-thread、synchronized、security</li>
-                <li>Design pattern: Strategy, Singleton, Template</li>
-            </ul>
-            <h4>Main develop:</h4>
-            <ul>
-                <li>Deposit bonus campaign (Java): User will earn rewards after depositing</li>
-                <li>Refer a friend campaign (Java): User will earn rewards after referring friends</li>
-                <li>Trading bonus campaign (Java): User will earn rewards after trading specific lots</li>
-            </ul>
-            <h4>Routine job:</h4>
-            <ul>
-                <li>Develop products:</li>
-                <ul>
-                    <li>Restful API: Client Portal (Java), Admin Portal (Java), Campaign Report (Java, VUE), Davinci Report (Python, React)</li>
-                    <li>Cronjob: Commission job (Java), Trade lots job (Java), Status machine job (Java)</li>
-                    <li>Kafka: Deposit consumer, Register consumer, Create account consumer</li>
-                </ul>
-            </ul>
+<div class="row justify-content-center mt-4">
+  <div class="col-md-7 contact-info">
+   <h2>Name: Chen hung Lin</h2>
+   <h2>Phone: 0919040448</h2>
+   <h2>Email:  <a href="chenhung0506@gmail.com" title="chenhung0506@gmail.com" target="_blank" class="">chenhung0506@gmail.com</a></h2>
+  </div>
+  <div class="col-md-8"><div class="hr"></div></div>
+</div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script>
+        function openNav(num) {
+            document.getElementById("mySidenav"+num).style.width = "100%";
+        }
+        function closeNav(num) {
+            document.getElementById("mySidenav"+num).style.width = "0";
+        }
+        $(function () {
+            reloadBackGroundImage()
+            function reloadBackGroundImage() {
+                if( $( window ).width() < 601 ) {
+                    $('#app').css('background-image', 'url(img/pattern.png), url(img/bg-vertical.jpg)');
+                } else {
+                    $('#app').css('background-image', 'url(img/pattern.png), url(img/bg-horizontal.jpg)');
+                }
+            }
+            $( window ).resize(function() {
+                reloadBackGroundImage()
+            });
+        })
+        </script>
+
+
+        <!--sidenav-->
+        <div id="mySidenav0" class="sidenav rotate">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(0)">&times;</a><!--close btn-->
+            <!--sidenav content-->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2>Autobiography</h2>
+                        <iframe src="resume.html" width="100%" frameborder="0" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="warning">
-            <h3>Side project</h3>
-            <ul>
-                <li>Framework: Flask(python), spring-boot(Java)</li>
-                <li>Server: nginx, tomcat</li>
-                <li>DB: MySQL</li>
-                <li>OS: CentOs</li>
-                <li>Cloud: GCP、Linode、Heroku</li>
-                <li>Dev-Skill: Docker、bash-shell、Git、Jenkins</li>
-                <li>Dev-tech: jwt, encrypt, md5, captcha, Google recaptcha, smtp, jquery</li>
-            </ul>
+        <!--sidenav-->
+        <div id="mySidenav1" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(1)">&times;</a><!--close btn-->
+            <!--sidenav content-->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h7>&emsp;</h7>
+						<h2>Certificate</h2>
+						<iframe src="certificate.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <h2>Education</h2>
-        <ul>
-            <li>Master of Science: 國立中央大學 (Hydrology and Ocean Sciences) - 2012/7~2015/6</li>
-            <li>Bachelor of Science: 私立逢甲大學 (Hydraulic Engineering and Conservation) - 2008/7~2012/6</li>
-        </ul>
-    </div>
-</body>
+        <!--sidenav content-->
+        <div id="mySidenav10" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(10)">&times;</a>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h2>Architecture</h2>
+						<img src="img/architecture.jpg" width="100%" frameborder="0" scrolling="no" style="height: 97vh">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--linebot-->
+        <div id="mySidenav4" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(4)">&times;</a>
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-4 btn btn-one" onclick="hrefToUrl('https://lin.ee/oJo6HsB')">
+                        <span><a target="_blank">開啟機器人</a></span>
+                    </div>
+                    <div class="col-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/linebot')">
+                        <span><a target="_blank">Git連結</a></span>
+                    </div>
+                    <div class="col-8 padding-0">
+						<iframe src="linebot.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--university-->
+        <div id="mySidenav7" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(7)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://university.linch.ml')">
+                        <span><a target="_blank">造訪首頁[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://university.linch.ml/admin')">
+                        <span><a target="_blank">造訪後台[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/university-demo')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
+                    </div>
+                    <div class="col-md-12">
+                        <iframe src="university.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sidenav-->
+        <div id="mySidenav3" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(3)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://ivoting.linch.ml')">
+                        <span><a target="_blank">造訪首頁[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://ivoting.linch.ml/admin')">
+                        <span><a target="_blank">造訪後台[點此]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/iVoting')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
+                    </div>
+                    <div class="col-md-12">
+                        <iframe src="iVoting.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--sidenav-->
+        <div id="mySidenav8" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(8)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-3 btn btn-one" onclick="hrefToUrl('https://chat.linch.ml')">
+                        <span>造訪網站</span>
+                    </div>
+                    <div class="col-3 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/websocket-ui')">
+                        <span>前端Git</span>
+                    </div>
+                    <div class="col-3 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/websocket')">
+                        <span>後端Git</span>
+                    </div>
+                    <div class="col-md-9">
+						<iframe src="chat.html" width="100%" frameborder="0" scrolling="no" style="height: 90vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--sidenav-->
+        <div id="mySidenav5" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(5)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('Android/app-release.apk')">
+                        <span><a target="_blank">apk下載[點這]</a></span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/GreedSnack')">
+                        <span><a target="_blank">Git連結[點此]</a></span>
+                    </div>
+                    <div class="col-md-8">
+						<iframe src="greedSnake.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mySidenav2" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">&times;</a><!--close btn-->
+            <div class="container">
+                <div class="row justify-content-center box-1">
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://avalon.linch.ml')">
+                        <span>造訪網站[點此]</span>
+                    </div>
+                    <div class="col-md-4 btn btn-one" onclick="hrefToUrl('https://github.com/chenhung0506/avalon')">
+                        <span>Git連結[點此]</span>
+                    </div>
+                    <div class="col-md-8">
+						<iframe src="avalon.html" width="100%" frameborder="0" scrolling="no" style="height: 97vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        function hrefToUrl(url){
+            console.log('success');
+            window.open(url, '_blank');
+            // location.href = url;
+        }
+        $(document).ready(function() {
+        });
+        </script>
+    </body>
 </html>
