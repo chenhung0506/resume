@@ -79,7 +79,6 @@
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-      /* transform: translateY(0em); */
       overflow-y: auto; /* 獨立滾動條 */
       max-height: 70vh; /* 設定高度以啟用滾動條 */
     }
@@ -213,6 +212,28 @@
       right: 0;
     }
 
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px; 
+      margin: 5px 0px 0px 0px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 5px 120px;
+      background-color: #000000bb;
+      color: rgb(212, 126, 46);
+      text-decoration: none;
+      border-radius: 0px;
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .btn:hover {
+      background-color: #080000ef;
+    }
+
   </style>
 </head>
 <body>
@@ -335,7 +356,7 @@
             <ul>
                 <li><strong>SSO (Single Sign On) (Java):</strong></li>
                 <li class="indent">- Allow clients to redirect from their system to ours</li>
-                <li><strong>Websocket Service (Java, VUE):</strong></li>
+                <li><strong>Websocket Service (GO, VUE):</strong></li>
                 <li class="indent">- Provide users with a conversation window where they can chat with our chatbot.</li>
                 <li class="indent">- Product Link: <a href="https://www.kgibank.com/STP/html/comm/home.html" target="_blank">https://www.kgibank.com/STP/html/comm/home.html</a></li>
             </ul>
@@ -418,30 +439,34 @@
     <div class="shrink" data-target="section2">Architecture</div>
     <div class="section" id="section2">
       <div class="section-img">
-        <img src="img/architecture2.png">
+        <img src="img/architecture3.jpg">
       </div>
     </div>
     <div class="shrink" data-target="section3">Chat-Bot</div>
+    <div class="button-group">
+      <a href="https://chat-ui.linch.live" target="_blank" class="btn">Clients Link</a>
+      <a href="https://chat-ui.linch.live/service" target="_blank" class="btn">Services Link</a>
+    </div>
     <div class="section" id="section3">
       <div class="carousel">
         <div class="carousel-inner">
           <div class="carousel-item">
-            <img src="img/8-0.jpg" alt="Image 1">
-          </div>
-          <div class="carousel-item">
             <img src="img/8-1.jpg" alt="Image 1">
           </div>
           <div class="carousel-item">
-            <img src="img/8-2.jpg" alt="Image 1">
+            <img src="img/8-2.jpg" alt="Image 2">
           </div>
           <div class="carousel-item">
-            <img src="img/8-3.jpg" alt="Image 2">
+            <img src="img/8-3.jpg" alt="Image 3">
           </div>
           <div class="carousel-item">
-            <img src="img/8-4.jpg" alt="Image 3">
+            <img src="img/8-4.jpg" alt="Image 4">
           </div>
           <div class="carousel-item">
-            <img src="img/8-5.jpg" alt="Image 4">
+            <img src="img/8-5.jpg" alt="Image 5">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8-6.jpg" alt="Image 6">
           </div>
         </div>
         <div class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</div>
@@ -683,7 +708,7 @@
     // Set up auto-play functionality
     setInterval(() => {
         moveCarousel(1);
-    }, 4500);
+    }, 10000);
 
     // Initialize carousel position
     updateCarousel();
