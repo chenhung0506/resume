@@ -1,10 +1,11 @@
 version: '3.9'
 services:
   resume:
+    container_name: resume
     build:
       context: .
       dockerfile: Dockerfile
-    image: harbor.linch.live/react/resume:latest
+    image: react/resume:latest
     ports:
       - "3006:80"
     restart: always
